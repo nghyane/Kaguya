@@ -432,7 +432,7 @@ export const createProxyUrl = (
     return Object.entries(headers).map(([key, value]) => [key, value]);
   };
 
-  const { appendReqHeaders = {}, appendResHeaders = {}, ...rest } = proxy;
+  const { appendReqHeaders = {}, appendResHeaders = {}, refererUrl = '', ...rest } = proxy;
 
   const modifiedAppendReqHeaders = JSON.stringify(
     composeHeaders(appendReqHeaders)
@@ -444,10 +444,12 @@ export const createProxyUrl = (
   const params = stringify({
     appendReqHeaders: modifiedAppendReqHeaders,
     appendResHeaders: modifiedAppendResHeaders,
+    referer: refererUrl,
     ...rest,
   });
 
-  return `${config.proxyServerUrl}/?url=${encodeURIComponent(url)}&${params}`;
+  // encodeURIComponent is not needed here
+  return `${config.proxyServerUrl}/?url=${(url)}&${params}`;
 };
 
 export const createAttachmentUrl = (url: string) => {

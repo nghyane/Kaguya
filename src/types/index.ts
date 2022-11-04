@@ -312,6 +312,7 @@ export interface Proxy {
   appendResHeaders?: Record<string, string>;
   deleteReqHeaders?: string[];
   deleteResHeaders?: string[];
+  refererUrl?: string;
 }
 
 export type NotificationUser = {
