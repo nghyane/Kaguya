@@ -23,13 +23,7 @@ const ErrorPage: NextPage<CustomErrorProps, CustomErrorProps> = ({
 }) => {
   const { t } = useTranslation("_error_page");
 
-  if (!hasGetInitialPropsRun && err && !isDev) {
-    // getInitialProps is not called in case of
-    // https://github.com/vercel/next.js/issues/8592. As a workaround, we pass
-    // err via _app.js so it can be captured
-    Sentry.captureException(err);
-    // Flushing is not required in this case as it only happens on the client
-  }
+
 
   return (
     <div className="relative w-full min-h-screen flex items-center">
