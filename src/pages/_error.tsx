@@ -1,7 +1,6 @@
 import Button from "@/components/shared/Button";
 import Head from "@/components/shared/Head";
 import Section from "@/components/shared/Section";
-import * as Sentry from "@sentry/nextjs";
 import { NextPage } from "next";
 import { Trans, useTranslation } from "next-i18next";
 import NextErrorComponent, { ErrorProps } from "next/error";
