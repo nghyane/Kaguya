@@ -219,9 +219,8 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ anime }) => {
                   <InfoItem
                     className="!text-primary-300"
                     title={t("next_airing_schedule")}
-                    value={`${t("common:episode")} ${
-                      nextAiringSchedule.episode
-                    }: ${nextAiringScheduleTime}`}
+                    value={`${t("common:episode")} ${nextAiringSchedule.episode
+                      }: ${nextAiringScheduleTime}`}
                   />
                 )}
               </div>
@@ -330,9 +329,8 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ anime }) => {
               <InfoItem
                 className="!text-primary-300"
                 title={t("next_airing_schedule")}
-                value={`${t("common:episode")} ${
-                  nextAiringSchedule.episode
-                }: ${nextAiringScheduleTime}`}
+                value={`${t("common:episode")} ${nextAiringSchedule.episode
+                  }: ${nextAiringScheduleTime}`}
               />
             )}
           </div>
@@ -376,9 +374,8 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ anime }) => {
 
               <InfoItem
                 title={t("common:season")}
-                value={`${convert(anime.season, "season", { locale })} ${
-                  anime.seasonYear
-                }`}
+                value={`${convert(anime.season, "season", { locale })} ${anime.seasonYear
+                  }`}
               />
               <InfoItem
                 title={t("common:synonyms")}
@@ -500,6 +497,7 @@ export const getStaticProps: GetStaticProps = async ({
       revalidate: REVALIDATE_TIME,
     };
   } catch (err) {
+    console.log(err.message);
     return { notFound: true, revalidate: REVALIDATE_TIME };
   }
 };

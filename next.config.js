@@ -8,6 +8,8 @@ const withPWA = require("next-pwa");
 const defaultRuntimeCaching = require("./cache");
 const { i18n } = require("./next-i18next.config");
 
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+
 const moduleExports = withPWA({
   images: {
     domains: [

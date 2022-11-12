@@ -64,7 +64,7 @@ const BrowsePage = ({ query: baseQuery }) => {
     keyword = "",
     season = undefined,
     seasonYear = undefined,
-    sort = "popularity",
+    sort = "POPULARITY",
     genres = [],
     tags = [],
     countries = [],
